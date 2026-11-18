@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PlayItLive Now: Coming Very Soon</title>
+<meta name="description" content="A new home for AI-assisted songwriters: showcase your music, sell your merch, sing live, and meet other creators. Coming very soon. 18+.">
+<meta property="og:title" content="PlayItLive Now: Coming Very Soon">
+<meta property="og:description" content="A new home for AI-assisted songwriters. Showcase, sell, sing live, and connect. Coming very soon.">
+<meta property="og:image" content="poster-wide.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#070707; --card:#141414; --line:rgba(255,204,77,.28); --gold:#ffcc4d; --silver:#c4c4c6; --text:#ececec; --muted:#a3a4a6; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin:0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, sans-serif; line-height:1.55;
+         background-image: radial-gradient(ellipse at 50% 0%, #1d1a14 0%, transparent 60%), radial-gradient(ellipse at 50% 100%, #191106 0%, transparent 55%); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 28px 18px 60px; }
+  header { text-align:center; }
+  header img { width: min(440px, 80vw); height:auto; display:block; margin: 0 auto; }
+  .kicker { font-family: 'Bebas Neue', Impact, sans-serif; letter-spacing:.35em; color: var(--silver); font-size: 1.05rem; margin: 6px 0 0; }
+  h1 { font-family: 'Bebas Neue', Impact, sans-serif; font-weight:400; letter-spacing:.04em; margin: 4px 0 6px;
+       font-size: clamp(3rem, 11vw, 6.2rem); line-height:1; color: var(--gold); text-shadow: 0 4px 0 #000, 0 0 40px rgba(255,204,77,.25); }
+  .sub { font-size: clamp(1.05rem, 3.4vw, 1.35rem); color: var(--text); max-width: 640px; margin: 0 auto 22px; }
+  .player { position: relative; border:1px solid var(--line); border-radius: 18px; overflow:hidden; background:#000; box-shadow: 0 20px 60px rgba(0,0,0,.6); max-width: 860px; margin: 0 auto; }
+  .player video { display:block; width:100%; height:auto; background:#000; }
+  .player.tall { max-width: 420px; }
+  .sound { position:absolute; left:12px; bottom:12px; background: rgba(0,0,0,.72); color:#fff; border:1px solid var(--line); border-radius: 999px;
+           padding: 10px 16px; font: 600 .95rem Inter, sans-serif; cursor:pointer; }
+  .sound:hover { background: rgba(0,0,0,.9); }
+  h2 { font-family: 'Bebas Neue', Impact, sans-serif; font-weight:400; letter-spacing:.06em; font-size: clamp(2rem, 6vw, 2.8rem); text-align:center; margin: 54px 0 4px; color:#fff; }
+  .lead { text-align:center; color: var(--muted); margin: 0 auto 22px; max-width: 560px; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+  .card { background: var(--card); border:1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 18px 18px 16px; }
+  .card h3 { font-family: 'Bebas Neue', Impact, sans-serif; font-weight:400; letter-spacing:.06em; font-size:1.55rem; margin: 0 0 4px; color: var(--gold); }
+  .card p { margin:0; color: #cfcfcf; font-size:.98rem; }
+  .card.maybe { border-style: dashed; border-color: var(--line); }
+  .tag { display:inline-block; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:#000; background: var(--gold); border-radius: 999px; padding: 2px 10px; margin-bottom: 8px; font-weight:600; }
+  .cta { text-align:center; margin-top: 54px; padding: 30px 18px; border:1px solid var(--line); border-radius: 18px; background: linear-gradient(180deg, #17130b, #0d0d0d); }
+  .cta h2 { margin-top:0; }
+  .btn { display:inline-block; margin-top: 8px; padding: 14px 26px; border-radius: 999px; background: linear-gradient(180deg,#ffe08a,#e7a823); color:#1a1200; text-decoration:none;
+         font-family: 'Bebas Neue', Impact, sans-serif; letter-spacing:.1em; font-size:1.3rem; }
+  .btn:hover { filter: brightness(1.08); }
+  footer { text-align:center; color: var(--muted); font-size:.88rem; margin-top: 40px; }
+  footer strong { color: var(--text); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="logo.png" alt="PlayItLive Now">
+    <p class="kicker">A HOME FOR AI-ASSISTED SONGWRITERS</p>
+    <h1>COMING VERY SOON</h1>
+    <p class="sub">A place to showcase your music, sell your merch, sing live, and meet other creators who get what you do.</p>
+  </header>
+
+  <div class="player" id="player">
+    <video id="ad" autoplay muted loop playsinline preload="auto" poster="poster-wide.jpg"></video>
+    <button class="sound" id="sound" type="button" aria-pressed="false">&#128264; Tap for sound</button>
+  </div>
+
+  <h2>WHAT'S COMING</h2>
+  <p class="lead">Here is what we're building for you.</p>
+  <div class="grid">
+    <div class="card"><h3>Your Own Page</h3><p>Show off your songs and videos on a profile page you can fully customize: your look, your colors, your style.</p></div>
+    <div class="card"><h3>The Merch Booth</h3><p>Sell your music and merch. Buyers pay through your own link, so you keep what you earn.</p></div>
+    <div class="card"><h3>The Open Stage</h3><p>Live singing. Join the line, take the mic, and perform for the room.</p></div>
+    <div class="card"><h3>Live Chat &amp; Genre Rooms</h3><p>Nineteen genre rooms, each with its own chat and its own radio station.</p></div>
+    <div class="card"><h3>Lyric &amp; Prompting Tips</h3><p>Rooms for swapping lyric-writing tips, Suno prompts and how-tos with other creators.</p></div>
+    <div class="card"><h3>The Front Row Radio</h3><p>One station everyone hears together, playing songs from members like you.</p></div>
+    <div class="card"><h3>Honest Ears &amp; Reels</h3><p>Get real ratings and feedback on your songs, and share short videos in a scrolling reel.</p></div>
+    <div class="card maybe"><span class="tag">We're thinking about it</span><h3>Contests</h3><p>Monthly, maybe even weekly, contests for the best track. Would you enter? Tell us.</p></div>
+  </div>
+
+  <div class="cta">
+    <h2>TELL US WHAT YOU WANT TO SEE</h2>
+    <p class="lead" style="margin-bottom:14px">Is this something you'd use? Know a songwriter who'd love it? Your ideas help shape the site.</p>
+    <a class="btn" href="mailto:support@playitlivenow.com?subject=What%20I'd%20like%20to%20see%20on%20PlayItLive%20Now">EMAIL US YOUR IDEAS</a>
+    <p class="lead" style="margin:16px auto 0">Share this page with your friends and fellow songwriters.</p>
+  </div>
+
+  <footer>
+    <p><strong>18+ only.</strong> PlayItLive Now is run by Xexex Enterprises LLC. Not affiliated with Suno, Inc.</p>
+  </footer>
+</div>
+<script>
+(function () {
+  var v = document.getElementById('ad'), box = document.getElementById('player'), btn = document.getElementById('sound');
+  var tall = window.matchMedia('(max-width: 700px)').matches;
+  v.src = tall ? 'ad-vertical.mp4' : 'ad-wide.mp4';
+  v.poster = tall ? 'poster-vertical.jpg' : 'poster-wide.jpg';
+  if (tall) box.classList.add('tall');
+  var p = v.play(); if (p && p.catch) p.catch(function () { /* the browser blocked autoplay; the viewer can tap the video */ });
+  v.controls = false;
+  btn.addEventListener('click', function () {
+    v.muted = !v.muted;
+    if (!v.muted) { v.currentTime = 0; v.play(); }
+    btn.setAttribute('aria-pressed', String(!v.muted));
+    btn.innerHTML = v.muted ? '&#128264; Tap for sound' : '&#128266; Sound on';
+  });
+  v.addEventListener('click', function () { if (v.paused) v.play(); else v.pause(); });
+})();
+</script>
+</body>
+</html>
